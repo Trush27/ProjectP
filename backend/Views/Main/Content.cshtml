@@ -1,0 +1,128 @@
+@{
+  Layout = "~/Views/Shared/_SecondLayout.cshtml";
+  ViewData["Title"] = "Page Title";
+}
+
+        <div class="row-11 d-flex my-2 mx-2">
+          <div class="col-2 text-Users-title fs-2">
+            Users
+          </div>
+          <div class="col-10 d-flex justify-content-end">
+            <div class="row mx-2">
+              <input type="text" placeholder="Search" class="search-textbox col p-4">
+            </div>
+            <button onclick="addUser()" class="add-user-button">
+              +Add User
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive users-table row m-3">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="text-black-50">Name <img src="images/icons/customer.svg" alt=""></th>
+                <th scope="col" class="text-black-50">Email</th>
+                <th scope="col" class="text-black-50">Phone</th>
+                <th scope="col" class="text-black-50">Role</th>
+                <th scope="col" class="text-black-50">Status</th>
+                <th scope="col" class="text-black-50">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="images/Default_pfp.svg.png" alt="" width="30px" class="mx-2" class="text-muted">georgia
+                  young</td>
+                <td>georgia.young@example.com</td>
+                <td>9876543210</td>
+                <td>Chef</td>
+                <td><span class="status-active">active</span></td>
+                <td>
+                  <i class="material-icons " onclick="editUser()">edit</i>
+                  <i class="material-icons" data-bs-toggle="modal" data-bs-target="#confirmmodal">delete</i>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/Default_pfp.svg.png" alt="" width="30px" class="mx-2">John Sina</td>
+                <td>john.cena@example.com</td>
+                <td>6528176819</td>
+                <td>account</td>
+                <td><span class="status-inactive">inactive</span></td>
+                <td>
+                  <i class="material-icons" onclick="editUser()">edit</i>
+                  <i class="material-icons" data-bs-toggle="modal" data-bs-target="#confirmmodal">delete</i>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/Default_pfp.svg.png" alt="" width="30px" class="mx-2">Samay</td>
+                <td>samay@work.com</td>
+                <td>1234567890</td>
+                <td>admin</td>
+                <td><span class="status-active">active</span></td>
+                <td>
+                  <i class="material-icons" onclick="editUser()">edit</i>
+                  <i class="material-icons" data-bs-toggle="modal" data-bs-target="#confirmmodal">delete</i>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/Default_pfp.svg.png" alt="" width="30px" class="mx-2">Wilson sane</td>
+                <td>wilson.sane@example.com</td>
+                <td>9375389303</td>
+                <td>admin</td>
+                <td><span class="status-active">active</span></td>
+                <td>
+                  <i class="material-icons" onclick="editUser()">edit</i>
+                  <i class="material-icons" data-bs-toggle="modal" data-bs-target="#confirmmodal">delete</i>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/Default_pfp.svg.png" alt="" width="30px" class="mx-2">alex schutz</td>
+                <td>schutz.alex@example.com</td>
+                <td>9173011872</td>
+                <td>admin</td>
+                <td><span class="status-inactive">Inactive</span></td>
+                <td>
+                  <i class="material-icons" onclick="editUser()">edit</i>
+                  <i class="material-icons" data-bs-toggle="modal" data-bs-target="#confirmmodal">delete</i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-4 pagination-container justify-content-end">
+            <div class="col-md-8">
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-end align-items-center">
+                  <div class="align-items-center">Items per page:</div>
+                  <select class="form-select justify-content-center w-25 m-2">
+                    <option selected>select</option>
+                    <option value="1">5</option>
+                    <option value="2">10</option>
+                    <option value="3">15</option>
+                  </select>
+                  <div class="d-flex align-items-center m-2">
+                    <span class="text-muted">Showing 1 - 5 of 14</span>
+                  </div>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                      <i class="fas fa-chevron-left"></i>
+                    </a>
+                  </li>
+
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-chevron-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+@section Scripts {
+    <script src="~/js/users.js"></script>
+}
+

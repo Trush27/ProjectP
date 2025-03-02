@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Pizzashop - Menu</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2 d-none d-md-block sidebar">
+        <div class="sidebar-body">
+          <div class="col d-flex">
+            <div class="row w-50"><img class="" src="images/logos/pizzashop_logo.png " alt=""></div>
+            <div class="row fs-5 align-items-center">
+              <p class="brand-name-dashboard">PIZZASHOP </p>
+            </div>
+          </div>
+          <div class="col">
+            <ul class="d-flex col flex-column">
+              <li class="sidebar-item ">
+                <img src="images/icons/customer.svg" alt="" class="col">
+                <span class="col"><a href="dashboard.html" class="text-decoration-none">Dashboard</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=" color-primary"><a href="users.html" class="text-decoration-none ">Users</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=""><a href="permissions.html" class="text-decoration-none">role and permissions</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=""><a href="menu.html" class="text-decoration-none">Menu</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=""><a href="dashboard.html" class="text-decoration-none">tables and sections</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=""><a href="dashboard.html" class="text-decoration-none">taxes and fees</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=""><a href="dashboard.html" class="text-decoration-none">Orders</a></span>
+              </li>
+              <li class="sidebar-item m-2">
+                <img src="images/icons/customer.svg" alt="">
+                <span class=""><a href="dashboard.html" class="text-decoration-none">Customers</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-9 col-lg-10 main-content">
+        <div class="navbar-profile w-100 py-2 px-3 d-flex align-items-center">
+          <button class="btn toggle-sidebar d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <img src="images/menu-item-icon.png" alt="" height="30px">
+          </button>
+          <img src="images/Default_pfp.svg.png" alt="Profile" class="profile-pic ms-auto" height="30">
+        </div>
+
+       
+        <div class="row my-4 px-3">
+          <div class="col-6 text-Users-title fs-2">Menu</div>
+          <div class="col-6 d-flex justify-content-end">
+            <button class="btn back-button mx-1" onclick="backToUsers()">Back</button>
+          </div>
+        </div>
+
+       
+        <ul class="nav nav-tabs px-3" id="menuTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="items-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab">
+              <img src="images/menu-item-icon.png" class="me-2" width="20">Items
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="modifiers-tab" data-bs-toggle="tab" data-bs-target="#modifiers" type="button" role="tab">
+              <img src="images/modifiers-icon.png" class="me-2" width="20">Modifiers
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content mt-3 px-3">
+        
+          <div class="tab-pane fade show active" id="items" role="tabpanel">
+            <div class="row">
+              
+              <div class="col-md-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5>Categories</h5>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                    <i class="material-icons">add</i>
+                  </button>
+                </div>
+                <div class="list-group">
+                  <a href="" class="list-group-item list-group-item-action">Sandwich</a>
+                  <a href="" class="list-group-item list-group-item-action">Pasta</a>
+                  <a href="" class="list-group-item list-group-item-action">Sides and Appetizers</a>
+                  <a href="" class="list-group-item list-group-item-action">Salads</a>
+                  <a href="" class="list-group-item list-group-item-action">Chips and Sauces</a>
+                  <a href="" class="list-group-item list-group-item-action">Pizza</a>
+                  <a href="" class="list-group-item list-group-item-action">Burger</a>
+                </div>
+              </div>
+
+              <div class="col-md-10">
+                <div class="d-flex justify-content-between mb-3">
+                  <div class="search-box w-75">
+                    <input type="text" class="form-control" placeholder="Search items">
+                  </div>
+                  <button class="btn btn-primary">+ New Item</button>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-black-50"><input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled></th>
+                            <th scope="col" class="text-black-50">Name</th>
+                            <th scope="col" class="text-black-50">Item type</th>
+                            <th scope="col" class="text-black-50">Rate</th>
+                            <th scope="col" class="text-black-50">Quantity</th>
+                            <th scope="col" class="text-black-50">available</th>
+                            <th scope="col" class="text-black-50">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                            <td><img src="images/dining-menu.png" alt="" width="30px" class="mx-2">Punjabi Tadka Sandwich</td>
+                            <td><img src="images/icons/non-veg-icon.svg" alt="" width="30px" class="mx-2"></td>
+                            <td>200</td>
+                            <td>1</td>
+                            <td ><div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                              </div></td>
+                            <td>
+                              <i class="material-icons " onclick="editItem()">edit</i>
+                              <i class="material-icons" id="modal" data-toggle="modal" data-target="#confirmmodal" onclick="deleteItem()">delete</i>
+                            </td>
+                        </tr> 
+                        <tr>
+                          <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                          <td><img src="images/dining-menu.png" alt="" width="30px" class="mx-2">Punjabi Tadka Sandwich</td>
+                          <td><img src="images/icons/non-veg-icon.svg" alt="" width="30px" class="mx-2"></td>
+                          <td>200</td>
+                          <td>1</td>
+                          <td ><div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            </div></td>
+                          <td>
+                            <i class="material-icons " onclick="editItem()">edit</i>
+                            <i class="material-icons" id="modal" data-toggle="modal" data-target="#confirmmodal" onclick="deleteItem()">delete</i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                            <td><img src="images/dining-menu.png" alt="" width="30px" class="mx-2">Punjabi Tadka Sandwich</td>
+                            <td><img src="images/icons/non-veg-icon.svg" alt="" width="30px" class="mx-2"></td>
+                            <td>200</td>
+                            <td>1</td>
+                            <td ><div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                              </div></td>
+                            <td>
+                              <i class="material-icons " onclick="editItem()">edit</i>
+                              <i class="material-icons" id="modal" data-toggle="modal" data-target="#confirmmodal" onclick="deleteItem()">delete</i>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                            <td><img src="images/dining-menu.png" alt="" width="30px" class="mx-2">Punjabi Tadka Sandwich</td>
+                            <td><img src="images/icons/non-veg-icon.svg" alt="" width="30px" class="mx-2"></td>
+                            <td>200</td>
+                            <td>1</td>
+                            <td ><div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                              </div></td>
+                            <td>
+                              <i class="material-icons " onclick="editItem()">edit</i>
+                              <i class="material-icons" id="modal" data-toggle="modal" data-target="#confirmmodal" onclick="deleteItem()">delete</i>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                            <td><img src="images/dining-menu.png" alt="" width="30px" class="mx-2">Punjabi Tadka Sandwich</td>
+                            <td><img src="images/icons/non-veg-icon.svg" alt="" width="30px" class="mx-2"></td>
+                            <td>200</td>
+                            <td>1</td>
+                            <td ><div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                              </div></td>
+                            <td>
+                              <i class="material-icons " onclick="editItem()">edit</i>
+                              <i class="material-icons" id="modal" data-toggle="modal" data-target="#confirmmodal" onclick="deleteItem()">delete</i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="tab-pane fade" id="modifiers" role="tabpanel">
+            <div class="row">
+              <div class="col-md-12">
+                <h5>Modifiers</h5>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarLabel">PIZZASHOP</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="col d-flex">
+          <div class="row w-50"><img class="" src="images/logos/pizzashop_logo.png " alt=""></div>
+          <div class="row fs-5 align-items-center">
+            <p class="brand-name-dashboard">PIZZASHOP </p>
+          </div>
+        </div>
+        <div class="col">
+          <ul class="d-flex col flex-column">
+            <li class="sidebar-item ">
+              <img src="images/icons/customer.svg" alt="" class="col">
+              <span class="col"><a href="dashboard.html" class="text-decoration-none">Dashboard</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=" color-primary"><a href="users.html" class="text-decoration-none ">Users</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=""><a href="dashboard.html" class="text-decoration-none">role and permissions</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=""><a href="dashboard.html" class="text-decoration-none">Menu</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=""><a href="dashboard.html" class="text-decoration-none">tables and sections</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=""><a href="dashboard.html" class="text-decoration-none">taxes and fees</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=""><a href="dashboard.html" class="text-decoration-none">Orders</a></span>
+            </li>
+            <li class="sidebar-item m-2">
+              <img src="images/icons/customer.svg" alt="">
+              <span class=""><a href="dashboard.html" class="text-decoration-none">Customers</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="addCategoryModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="categoryName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="categoryName" placeholder="Enter category name">
+              </div>
+              <div class="mb-3">
+                <label for="categoryDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="categoryDescription" rows="3" placeholder="Enter description"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+
+</html>
